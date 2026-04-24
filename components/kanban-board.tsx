@@ -1,7 +1,7 @@
 "use client";
 
 import { Board, Column, JobApplication } from "@/lib/models/models.types";
-import { Award, Calendar, CheckCircle2, Mic, MoreHorizontal, MoreVertical, Trash2, XCircle,} from "lucide-react";
+import { Award, Calendar, CheckCircle2, Circle, List, Loader2, Mic, MoreHorizontal, MoreVertical, ThermometerSnowflake, Trash2, XCircle,} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,} from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
@@ -24,15 +24,15 @@ interface ColConfig {
 }
 const COLUMN_CONFIG: Array<ColConfig> = [
   {
-    color: "bg-cyan-500",
-    icon: <Calendar className="h-4 w-4" />,
-  },
-  {
-    color: "bg-purple-500",
-    icon: <CheckCircle2 className="h-4 w-4" />,
+    color: "bg-gray-500",
+    icon: <Circle className="h-4 w-4" />,
   },
   {
     color: "bg-green-500",
+    icon: <CheckCircle2 className="h-4 w-4" />,
+  },
+  {
+    color: "bg-cyan-500",
     icon: <Mic className="h-4 w-4" />,
   },
   {
@@ -67,7 +67,7 @@ function DroppableColumn({
   const sortedJobs =
     column.jobApplications?.sort((a, b) => a.order - b.order) || [];
   return (
-    <Card className="w-100 shrink-0 shadow-md p-0">
+    <Card className="w-90  shadow-md p-0">
       <CardHeader
         className={`${config.color} text-white rounded-t-lg pb-3 pt-3`}
       >

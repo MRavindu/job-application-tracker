@@ -3,13 +3,13 @@ import { Board, Column } from "./models";
 
 const DEFAULT_COLUMNS = [
   {
-    name: "Wish List",
+    name: "Open",
     order: 0,
   },
-  { name: "Applied", order: 1 },
-  { name: "Interviewing", order: 2 },
-  { name: "Offer", order: 3 },
-  { name: "Rejected", order: 4 },
+  { name: "In Progress", order: 1 },
+  { name: "Under Review", order: 2 },
+  { name: "Completed", order: 3 },
+  { name: "Cancelled", order: 4 },
 ];
 
 export async function initializeUserBoard(userId: string) {

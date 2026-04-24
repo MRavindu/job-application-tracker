@@ -24,8 +24,9 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-2 text-xl font-semibold text-primary"
         >
-          <Briefcase />
-          Job Tracker
+          {/* <Briefcase /> */}
+          <img src={"/Logo.svg"} alt="Logo" className="h-8 w-8" />
+          Phoenix Tracker
         </Link>
         <div className="flex items-center gap-4">
           {session?.user ? (
@@ -72,13 +73,13 @@ export default function Navbar() {
               <Link href="/sign-in">
                 <Button
                   variant="ghost"
-                  className="text-gray-700 hover:text-black"
+                  className="text-gray-700 hover:text-secondary"
                 >
                   Log In
                 </Button>
               </Link>
               <Link href="/sign-up">
-                <Button className="bg-primary hover:bg-primary/90">
+                <Button variant="secondary" className="px-4 py-2 text-sm font-medium">
                   Start for free
                 </Button>
               </Link>

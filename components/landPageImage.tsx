@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 
 
 export default function LandImage() {
-  const [activeTab, setActiveTab] = useState("organize")
+  type Tab = "Workspace" | "Task" | "Statuses";
+  const [activeTab, setActiveTab] = useState<Tab>("Workspace")
 
   return (
     <section className="border-t bg-white py-16">
@@ -14,28 +15,28 @@ export default function LandImage() {
             <div className="mx-auto max-w-6xl">
             {/* Tabs */}
               <div className="flex gap-2 justify-center mb-8">
-                <Button onClick={() => setActiveTab("organize")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "organize" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Organize Applications</Button>
-                <Button onClick={() => setActiveTab("hired")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "hired" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Get Hired</Button>
-                <Button onClick={() => setActiveTab("boards")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "boards" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Manage Boards</Button>
+                <Button onClick={() => setActiveTab("Workspace")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "Workspace" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Tidy Workspace</Button>
+                <Button onClick={() => setActiveTab("Task")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "Task" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Manage Tasks</Button>
+                <Button onClick={() => setActiveTab("Statuses")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "Statuses" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Track Statuses</Button>
               </div>
               <div className="relative mx-auto max-w-5xl overflow-hidden rounded-lg border border-gray-200 shadow-xl">
-                {activeTab === "organize" && <Image
+                {activeTab === "Workspace" && <Image
                   src="/hero-images/hero1.png"
-                  alt="Organize Applications"
+                  alt="Organize Tasks"
                   width={1200}
                   height={800} />}
 
-                  {activeTab === "hired" && <Image
-                  src="/hero-images/hero2.png"
-                  alt="Manage All boards"
-                  width={1200}
-                  height={800} />}
+                {activeTab === "Task" && <Image
+                src="/hero-images/hero2.png"
+                alt="Manage All boards"
+                width={1200}
+                height={800} />}
 
-                  {activeTab === "boards" && <Image
-                  src="/hero-images/hero3.png"
-                  alt="Get Hired"
-                  width={1200}
-                  height={800} />}
+                {activeTab === "Statuses" && <Image
+                src="/hero-images/hero3.png"
+                alt="Get Hired"
+                width={1200}
+                height={800} />}
               </div>
             </div>
           </div>

@@ -39,8 +39,8 @@ async function DashboardPage() {
     <div className="min-h-screen bg-white">
       <div className="container mx-auto p-6">
         <div className="mb-6">
-          <h1 className="text-4xl font-bold text-black">Task Board</h1>
-          <p className="text-gray-600">Track your tasks efficiently!</p>
+          <h1 className="text-4xl font-bold text-black">Your Job Board</h1>
+          <p className="text-gray-600">Track your job applications efficiently!</p>
         </div>
         <KanbanBoard board={board} userId={session.user.id} />
       </div>

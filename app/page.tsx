@@ -15,10 +15,10 @@ export default function Home() {
               Beginning of a new era for
             </h3>
             <h1 className="text-primary text-7xl font-bold mb-8">
-              Task Tracking Applications
+              Job Tracking Applications
             </h1>
             <p className="text-muted-foreground mb-10 text-xl">
-              Capture, Manage and organize your tasks in one place.
+              Capture, Manage and organize your jobs in one place.
             </p>
             <div className="flex flex-col items-center gap-4">
               <Link href="/sign-up">

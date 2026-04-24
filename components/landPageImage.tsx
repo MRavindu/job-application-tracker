@@ -15,9 +15,9 @@ export default function LandImage() {
             <div className="mx-auto max-w-6xl">
             {/* Tabs */}
               <div className="flex gap-2 justify-center mb-8">
-                <Button onClick={() => setActiveTab("Workspace")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "Workspace" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Tidy Workspace</Button>
-                <Button onClick={() => setActiveTab("Task")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "Task" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Manage Tasks</Button>
-                <Button onClick={() => setActiveTab("Statuses")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "Statuses" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Track Statuses</Button>
+                <Button onClick={() => setActiveTab("Workspace")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "Workspace" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Easy to use Workspace</Button>
+                <Button onClick={() => setActiveTab("Task")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "Task" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Add all your Applications</Button>
+                <Button onClick={() => setActiveTab("Statuses")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "Statuses" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Keep everything Tracked</Button>
               </div>
               <div className="relative mx-auto max-w-5xl overflow-hidden rounded-lg border border-gray-200 shadow-xl">
                 {activeTab === "Workspace" && <Image

@@ -12,7 +12,7 @@ export default function SignOutButton() {
       onClick={async () => {
         const result = await signOut();
         if (result.data) {
-          router.push("/sign-in");
+          router.push("/");
         } else {
           alert("Error signing out");
         }

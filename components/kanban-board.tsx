@@ -19,28 +19,34 @@ interface KanbanBoardProps {
 }
 
 interface ColConfig {
-  color: string;
+  // color: string;
+  text: string;
   icon: React.ReactNode;
 }
 const COLUMN_CONFIG: Array<ColConfig> = [
   {
-    color: "bg-gray-500",
+    // color: "bg-gray-500",
+    text: "text-gray-500",
     icon: <Circle className="h-4 w-4" />,
   },
   {
-    color: "bg-green-500",
+    // color: "bg-green-500",
+    text: "text-green-500",
     icon: <CheckCircle2 className="h-4 w-4" />,
   },
   {
-    color: "bg-cyan-500",
+    // color: "bg-cyan-500",
+    text: "text-cyan-500",
     icon: <Mic className="h-4 w-4" />,
   },
   {
-    color: "bg-yellow-500",
+    // color: "bg-yellow-500",
+    text: "text-yellow-500",
     icon: <Award className="h-4 w-4" />,
   },
   {
-    color: "bg-red-500",
+    // color: "bg-red-500",
+    text: "text-red-500",
     icon: <XCircle className="h-4 w-4" />,
   },
 ];
@@ -67,14 +73,14 @@ function DroppableColumn({
   const sortedJobs =
     column.jobApplications?.sort((a, b) => a.order - b.order) || [];
   return (
-    <Card className="w-90  shadow-md p-0">
+    <Card className="w-90 shadow-md p-0 bg-transparent/500 gap-0 border-none">
       <CardHeader
-        className={`${config.color} text-white rounded-t-lg pb-3 pt-3`}
+        className={`${config.text} bg-background rounded-t-lg pb-3 pt-3`}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             {config.icon}
-            <CardTitle className="text-white text-base font-semibold">
+            <CardTitle className=" text-base font-semibold">
               {column.name}
             </CardTitle>
           </div>

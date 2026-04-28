@@ -24,13 +24,13 @@ export default function Navbar() {
   const homeHref = isLoggedIn ? "/dashboard" : "/";
 
   return (
-    <nav className="border-b border-gray-200 bg-white">
+    <nav className="border-b border-none bg-transparent">
       <div className="container mx-auto flex h-16 items-center px-4 justify-between">
         
         {/* Logo */}
         <Link
           href={homeHref}
-          className="flex items-center gap-2 text-xl font-semibold text-primary"
+          className="flex items-center gap-2 text-xl font-semibold text-white"
         >
           <img src="/Logo.svg" alt="Logo" className="h-8 w-8" />
           Phoenix Tracker
@@ -41,7 +41,7 @@ export default function Navbar() {
           {isLoggedIn ? (
             <>
               <Link href="/dashboard">
-                <Button variant="ghost" className="text-gray-700 hover:text-black">
+                <Button variant="ghost" className="text-gray-200 hover:text-secondary hover:bg-transparent">
                   Dashboard
                 </Button>
               </Link>
@@ -81,7 +81,7 @@ export default function Navbar() {
               <Link href="/sign-in">
                 <Button
                   variant="ghost"
-                  className="text-gray-700 hover:text-secondary"
+                  className="text-gray-200 hover:text-secondary hover:bg-transparent"
                 >
                   Log In
                 </Button>

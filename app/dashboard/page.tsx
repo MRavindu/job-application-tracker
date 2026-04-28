@@ -4,6 +4,7 @@ import { Board } from "@/lib/models";
 import { redirect } from "next/navigation";
 import KanbanBoard from "@/components/kanban-board";
 import { Suspense } from "react";
+import ParticlesBackground from "@/components/ParticlesBackground";
 
 async function getBoard(userId: string) {
   "use cache";
@@ -36,15 +37,19 @@ async function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    
+    <section className="relative container mx-auto px-4 py-auro overflow-hidden">
+      <ParticlesBackground />
+    <div className="min-h-screen bg-transparent relative z-10">
       <div className="container mx-auto p-6">
         <div className="mb-6">
-          <h1 className="text-4xl font-bold text-black">Your Job Board</h1>
-          <p className="text-gray-600">Track your job applications efficiently!</p>
+          <h1 className="text-4xl font-bold text-white">Your Job Board</h1>
+          <p className="text-secondary">Track your job applications efficiently!</p>
         </div>
         <KanbanBoard board={board} userId={session.user.id} />
       </div>
     </div>
+    </section>
   );
 }
 

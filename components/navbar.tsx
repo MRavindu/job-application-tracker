@@ -13,11 +13,11 @@ import { Avatar, AvatarFallback } from "./ui/avatar";
 import SignOutButton from "./sign-out-btn";
 
 export default function Navbar() {
-  const { data: session, status } = useSession();
+  const { data: session, isPending } = useSession();
 
   // ✅ Prevent hydration mismatch
-  if (status === "loading") {
-    return null; // or return a skeleton loader
+  if (isPending) {
+    return null;
   }
 
   const isLoggedIn = !!session?.user;
@@ -26,7 +26,6 @@ export default function Navbar() {
   return (
     <nav className="border-b border-none bg-transparent">
       <div className="container mx-auto flex h-16 items-center px-4 justify-between">
-        
         {/* Logo */}
         <Link
           href={homeHref}
@@ -41,7 +40,10 @@ export default function Navbar() {
           {isLoggedIn ? (
             <>
               <Link href="/dashboard">
-                <Button variant="ghost" className="text-gray-200 hover:text-secondary hover:bg-transparent">
+                <Button
+                  variant="ghost"
+                  className="text-gray-200 hover:text-secondary hover:bg-transparent"
+                >
                   Dashboard
                 </Button>
               </Link>
